@@ -165,7 +165,7 @@ async function deleteAll() {
 process.stdin.setEncoding("utf8");
 
 // get port number
-let portNumber = process.argv[2];
+//let portNumber = process.argv[2];
 
 // set up systems for webpage
 app.set("views", path.resolve(__dirname, "templates"));
