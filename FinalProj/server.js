@@ -6,15 +6,10 @@ const ejs = require("ejs");
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
-const alert = require("alert");
-//const prompt = require('prompt');
-const dialog = require("dialog");
 const axios = require("axios");
 
 // username and password from .env file
 require("dotenv").config();
-//app.use(express.static(path.join(__dirname, 'FinalProj')));
-app.use("/styles", express.static(__dirname + "/templates"));
 
 const userName = String(process.env.MONGO_DB_USERNAME);
 const password = String(process.env.MONGO_DB_PASSWORD);
@@ -106,9 +101,8 @@ async function addUser(
       );
 
     if (result.upsertedId == null) {
-      alert("Username Not Available!");
+      response.render("usernameNotAvail", variables);
     } else {
-      alert("Account Created Successfully!");
       response.render("confirmRegister", variables);
     }
   } catch (e) {
@@ -220,12 +214,8 @@ async function updateUserInformation(request, response) {
       request.body.username,
       request.body.password
     );
-    if (applicant !== undefined && applicant.length > 0) {
-      alert("Information Updated!");
-    } else {
-      alert(
-        `Could not find user ${request.body.username} or password incorrect.`
-      );
+    if (applicant == undefined || applicant.length < 1) {
+      response.render("noFindUser");
     }
   } catch (err) {
     console.log(err);
@@ -250,9 +240,9 @@ async function updateUserInformation(request, response) {
       .db(databaseAndCollection.db)
       .collection(databaseAndCollection.collection)
       .updateOne(
-        { username: request.body.username},
+        { username: request.body.username },
         {
-          $set: { name: request.body.name, email: request.body.email},
+          $set: { name: request.body.name, email: request.body.email },
         }
       );
   } catch (e) {
@@ -260,7 +250,8 @@ async function updateUserInformation(request, response) {
   } finally {
     await client.close();
   }
-  response.redirect("/");
+  response.render("index");
+  return;
 }
 
 app.post("/reviewInformation", (request, response) => {
@@ -271,11 +262,7 @@ app.post("/reviewInformation", (request, response) => {
 let signedIn = false;
 // form to sign in
 app.get("/signIn", (request, response) => {
-  if (signedIn) {
-    alert("Already Signed In.");
-  } else {
-    response.render("signIn");
-  }
+  response.render("signIn");
 });
 
 // after enter sign in form
@@ -287,14 +274,12 @@ app.post("/signIn", (request, response) => {
         request.body.password
       );
       if (applicant !== undefined && applicant.length > 0) {
-        response.redirect("/");
+        response.render("index");
         signedIn = true;
-        alert("Sign In Successful!");
         return;
       } else {
-        response.redirect("/");
+        response.render("noFindUser");
         signedIn = false;
-        alert("Sign In Failed!");
         return;
       }
     } catch (err) {
@@ -308,9 +293,8 @@ app.post("/signIn", (request, response) => {
 app.get("/signOut", (request, response) => {
   if (signedIn) {
     signedIn = false;
-    alert("Signed Out!");
   } else {
-    alert("Not Signed In!");
+    response.render("notSignedIn");
   }
 });
 
@@ -327,7 +311,7 @@ app.get("/newsFeed", (request, response) => {
   if (signedIn) {
     newsFeed(request, response);
   } else {
-    alert("Please sign in to access News Feed.");
+    response.render("signInPls");
   }
 });
 
@@ -366,6 +350,8 @@ app.post("/adminRemove", (request, response) => {
   removeDatabase(request, response);
 });
 
+// comment out localhost requrements
+/*
 app.listen(portNumber);
 
 // Print expected information to terminal
@@ -393,3 +379,4 @@ process.stdin.on("readable", () => {
     process.stdin.resume();
   }
 });
+*/
