@@ -353,6 +353,7 @@ app.post("/adminRemove", (request, response) => {
 
 app.listen(portNumber);
 
+/*
 // Print expected information to terminal
 process.stdout.write(
   `Web server started and running at http://localhost:${portNumber}\n`
@@ -377,4 +378,4 @@ process.stdin.on("readable", () => {
     process.stdout.write("Stop to shutdown the server: ");
     process.stdin.resume();
   }
-});
+});*/
