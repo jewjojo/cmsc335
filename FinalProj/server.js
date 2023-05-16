@@ -165,7 +165,7 @@ async function deleteAll() {
 process.stdin.setEncoding("utf8");
 
 // get port number
-//let portNumber = process.argv[2];
+let portNumber = process.argv[2];
 
 // set up systems for webpage
 app.set("views", path.resolve(__dirname, "templates"));
@@ -315,52 +315,17 @@ app.get("/newsFeed", (request, response) => {
   }
 });
 
-app.post("/adminGFA", (request, response) => {
-  collectGfas(request, response);
-});
-
-app.get("/adminRemove", (request, response) => {
-  response.render("adminRemove");
-});
-
-async function removeDatabase(request, response) {
-  let sendHtml =
-    "All applications have been removed from the database. Number of applications removed: ";
-
-  try {
-    const deletedCount = await deleteAll();
-    // build table if not empty list
-    if (deletedCount == 0) {
-      sendHtml = "Database is already empty.";
-    } else {
-      sendHtml += String(deletedCount);
-      sendHtml += "<br>";
-    }
-  } catch (err) {
-    console.log(err);
-  }
-
-  const variables = {
-    appCount: sendHtml,
-  };
-  response.render("processAdminRemove", variables);
-}
-
-app.post("/adminRemove", (request, response) => {
-  removeDatabase(request, response);
-});
-
 
 app.listen(portNumber);
 
-/*
 // Print expected information to terminal
 process.stdout.write(
-  `Web server started and running at http://localhost:${portNumber}\n`
+  `Web server started and running.\n`
 );
 process.stdout.write("Stop to shutdown the server: ");
 
 // terminal interface loop
+/*
 process.stdin.on("readable", () => {
   let dataInput = process.stdin.read();
   if (dataInput !== null) {
