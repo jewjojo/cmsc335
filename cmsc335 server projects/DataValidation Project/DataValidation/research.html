@@ -1,0 +1,91 @@
+<!-- You implement -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Research</title>
+    <script src="code.js" defer></script>
+</head>
+
+<body>
+    <header><b>Research Form</b></header>
+
+    <form action="researchProcessing.php" onsubmit="return validate()" method="get">
+        <fieldset>
+            <legend class="legendTop"><b>General Information</b></legend>
+            Firstname: <input type="text" id="firstName" name="firstname" required>
+            Lastname: <input type="text" id="lastName" name="lastname" required>
+            <br>
+            <br>
+            Phone: <input type="text" id="phone1" class="phone" name="phoneFirstPart" required>
+            - <input type="text" id="phone2" class="phone" name="phoneSecondPart" required>
+            - <input type="text" id="phone3" class="phone" name="phoneThirdPart" required>
+            Email: <input type="email" id="email" name="email">
+        </fieldset>
+
+        <fieldset>
+            <legend class="legendTop"><b>Research Study Data</b></legend>
+            <fieldset>
+                <legend><b>Age/Height/Weight</b></legend>
+                <b>Age:</b> <input type="number" id="age" name="age" min="1" max="125">
+                <b>Height:</b> <input type="number" id="heightFeet" name="heightFeet" min="2" max="7"> <i>Feet</i>
+                <input type="number" id="heightInches" name="heightInches" min="0" max="11"> <i
+                    id="inchesMargin">Inches</i>
+                <b>Weight:</b> <input type="number" id="weight" name="weight" min="1" max="600"> <i>Pounds</i>
+            </fieldset>
+
+            <fieldset>
+                <legend><b>Conditions</b></legend>
+                Which of the following conditions are present in your family? (Check all that apply)
+                <br>
+                <input type="checkbox" id="highBP" name="highBloodPressure" value="HighBloodPressure"> High Blood
+                Pressure
+                <input type="checkbox" id="diabetes" name="diabetes" value="Diabetes"> Diabetes
+                <input type="checkbox" id="glaucoma" name="glaucoma" value="Glaucoma"> Glaucoma
+                <input type="checkbox" id="asthma" name="asthma" value="Asthma"> Asthma
+                <input type="checkbox" id="none" name="none" value="None"> None
+            </fieldset>
+
+            <fieldset>
+                <legend><b>Time Period</b></legend>
+                How long have you experienced any of the above conditions?
+                <br>
+                <input type="radio" id="radio1" name="period" value="Never"> Never
+                <input type="radio" id="radio2" name="period" value="LessThanAYear"> Less than a year
+                <input type="radio" id="radio3" name="period" value="OneToTwoYears"> One to two years
+                <input type="radio" id="radio4" name="period" value="MoreThanTwoYears"> More than two years
+            </fieldset>
+
+            <fieldset>
+                <legend><b>Study Information</b></legend>
+                Which study are you taking part of?
+                <select id="studyType" name="studyType">
+                    <option value="LongTerm">Long Term</option>
+                    <option value="ShortTerm">Short Term</option>
+                </select>
+                Assigned Study Id: <input type="text" id="idFirst" name="firstFourDigits" placeholder="A777" required>
+                - <input type="text" id="idSecond" name="secondFourDigits" placeholder="B888" required>
+            </fieldset>
+
+            <fieldset>
+                <legend><b>Additional Information (Comments)</b></legend>
+                <textarea id="commentArea" name="comments"></textarea>
+            </fieldset>
+        </fieldset>
+        <br>
+        <fieldset>
+            <input type="reset" value="Clear Form">
+            <input type="submit" value="Submit Information">
+        </fieldset>
+
+    </form>
+    <footer>
+        CMSC Research Institute &reg;
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+/* You implement */
+
+body {
+    border: white;
+    border-style: solid;
+    border-width: 6px;
+    
+    font-size: 24px;
+    height: 100vh;
+    margin: 0;
+
+    background-image: url(images/JimHenson.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.outerBox {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+    display: block;
+
+    border: green;
+    border-style: solid;
+    border-width: 6px;
+}
+
+header {
+    color: azure;
+    margin: 1rem;
+    font-size: 60px;
+    text-decoration: underline;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#indexSmallBox {
+    height: fit-content;
+    width: 30%;
+    margin: 0 auto;
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    text-align: center;
+
+    border: black;
+    border-style: solid;
+    background-color: rgb(211, 211, 211, 0.8);
+}
+
+#footerBox {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    border: rgb(180, 216, 248);
+    border-style: solid;
+    border-width: 6px;
+}
+
+footer {
+    border: silver;
+    border-style: groove;
+    border-width: 6px;
+    background-color: red;
+    text-align: center;
+    padding: 14px;
+    font-style: italic;
+}
+
+a {
+    color: brown;
+}
+a:visited {
+    color: beige;
+}
+footer a:hover {
+    font-size: smaller;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: solid azure;
+    margin: 5%;
+    padding: 3%;
+    padding-bottom: 5%;
+    height: 55%;
+    width: 55%;
+    
+}
+
+label {
+    width: fit-content;
+    
+}
+
+input {
+    border: red;
+    border-style: solid;
+}
+
+.cc {
+    width: 10%;
+    border: red;
+    border-style: solid;
+}
+textarea {
+    width: 95%;
+    height: 35%;
+}
+
+.formButton {
+    border: black;
+    border-style: double;
+    border-radius: 20%;
+    width: 20%;
+    height: 10%;
+    text-align: center;
+}
+
+.terpOrder:hover {
+    font-size: 80%;
+}

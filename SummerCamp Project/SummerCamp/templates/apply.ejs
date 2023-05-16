@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Application</title>
+</head>
+
+<body>
+	<h1>Application</h1>
+	<form action="/apply" method="post"
+		onsubmit="return confirm('Are you sure you want to submit your application?\nYou will not be able to change your information once submitted.')">
+		<fieldset>
+			<label><b>Name: </b><input type="text" name="name" /></label>
+			<label><b>Email Address: </b><input type="text" name="email"></label>
+			<br><br>
+			<label><b>GPA: </b><input type="text" name="gpa"></label>
+			<br><br>
+			<label><b>Background Information: </b><br> <textarea name="backgroundInfo"> </textarea></label>
+		</fieldset>
+
+		<br>
+		<input type="reset" />
+		<input type="submit" value="Submit Application" />
+	</form>
+	<hr>
+	<a href="/">HOME</a>
+</body>
+
+</html>

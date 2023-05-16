@@ -1,0 +1,68 @@
+/* Do not remove this rule */
+
+html {
+    font-size: 14px;
+}
+
+body {
+    border-style: inset;
+    border-color: blue;
+    border-width: 1rem;
+    margin: 1rem;
+    background-image: url(https://today.umd.edu/uploads/hero/_1200x630_crop_center-center_82_none/UMD18_Web_Homepage_TERP_Testudo-Statue_3.jpg?mtime=1616527121);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div {
+    background-color: rgba(169, 241, 237, 0.85);
+}
+
+header {
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(85, 61, 131);
+}
+header:hover {
+    font-style: italic;
+}
+
+caption {
+    color: rgb(85, 61, 131);
+    font-size: 1.5rem;
+}
+
+p {
+    color: rebeccapurple;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+}
+p:hover {
+    color: blue;
+}
+
+.p2 {
+    color: blueviolet;
+}
+.p2:hover {
+    color: green;
+}
+
+table, th, td {
+    border: .1rem black solid;
+    width: .1rem;
+    margin: auto;
+    background-color: rgb(142, 189, 162);
+}
+
+#youtubeBox {
+    background-color: rgb(142, 189, 162);
+}
+
+#youtubeBox #vid {
+    display: none;
+}
+
+#youtubeBox:hover #vid {
+    display: inline;
+}

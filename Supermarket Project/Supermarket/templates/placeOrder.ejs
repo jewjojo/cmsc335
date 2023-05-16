@@ -1,0 +1,46 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Place Order</title>
+</head>
+
+<body>
+	<h1>Place Order Form</h1>
+	<form action="http://localhost:5000/order" method="post">
+		<fieldset>
+            <legend>
+                <strong>Customer Information</strong>
+            </legend>
+            
+			<label>Name: <input type="text" name="name"/></label>
+			<label>Email Address: <input type="email" name="email"  placeholder="example@notreal.notreal"></label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Delivery Method</legend>
+			<label><input type="radio" name="delivery" value="pickup">Will pick up order</label>
+	    	<label><input type="radio" name="delivery" value="delivery">Deliver order</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Select Items</legend>
+			<select name="itemsSelected" multiple>
+				<%- items %>
+			</select>
+		</fieldset>
+
+		<fieldset>
+			<legend>Additional Order Information</legend>
+			<label><textarea rows="5" cols="80" name="orderInformation"></textarea></label>
+		</fieldset>
+
+		<br>
+		<input type="reset" />
+		<input type="submit" value="Place order"/>
+	</form>
+</body>
+
+</html>

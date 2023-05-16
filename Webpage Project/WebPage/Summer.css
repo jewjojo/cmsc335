@@ -1,0 +1,92 @@
+/* Do not remove this rule */
+
+html {
+    font-size: 14px;
+}
+
+body {
+    background-color: antiquewhite;
+    border-style: double;
+    border-color: brown;
+    border-width: 1rem;
+    margin: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#innerBox {
+    background-color: white;
+    border-style: groove;
+    border-color: blue;
+    border-width: 1rem;
+    margin: 1rem;
+    padding: 3rem;
+}
+
+#imageBox {
+    border-style: none;
+    overflow: hidden;
+}
+
+.pics {
+    height: 7rem;
+    display: inline;
+    vertical-align: bottom;
+  }
+
+#img2 {
+    height: 5rem;
+    width: 35rem;
+}
+
+.para {
+    color: brown;
+}
+
+#p1::first-letter {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#p1:hover {
+    color: red;
+}
+
+#tableTitle {
+    color: blue;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-thickness: .15rem;
+}
+
+table, th, td {
+    border: .1rem black solid;
+}
+
+#tableHeader {
+    color: brown;
+    background-color: antiquewhite;
+}
+
+#italics {
+    font-style: italic;
+}
+
+#tour:hover {
+    content: attr(title);
+}
+
+.alphabet {
+    list-style-type: upper-alpha;
+}
+
+.decimal {
+    list-style-type: decimal;
+}
+
+#instructor {
+    color: blue;
+}
+
+span {
+    font-style: italic;
+}

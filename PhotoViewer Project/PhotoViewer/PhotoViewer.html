@@ -1,0 +1,63 @@
+<!-- You implement -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Photo Viewer</title>
+    <script src="code.js" defer></script>
+</head>
+
+<body>
+    <header><b>Photo Viewer</b></header>
+        <br>
+    <div id="mainBody">
+        <img src="InitialImage.jpg" id="pic" onclick="nextPhoto()">
+    </div>
+    <div>
+        <fieldset>
+            <legend><b>Status</b></legend>
+            Photo Being Displayed: <input type="text" id="photoDisplayed" value='InitialImage.jpg' disabled>
+            <br>
+            <div id="system">Photo Viewer System</div>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Loading Images (Local Folder)</b></legend>
+            Photos Folder: <input id="folderName" type="text" value="umcp/">
+            Common Name: <input id="commonName" type="text" value="college">
+            <br>
+            Start Photo Number: <input id="start" type="number" value="2">
+            End Photo Number: <input id="stop" type="number" value="4">
+            <br>
+            <button type="button" onclick="loadImagesFolder()">Load Photos</button>
+        </fieldset>
+        
+        <fieldset>
+            <legend><b>Loading Images (JSON File)</b></legend>
+            URL: <input id="jsonUrl" type="text" value="http://www.cs.umd.edu/~nelson/classes/resources/cmsc335/images/imagesSet1.json">
+            <button type="button" onclick="loadJSON()">Load JSON</button>
+        </fieldset>
+        
+        <fieldset>
+            <legend><b>Iterating</b></legend>
+            <button type="button" onclick="prevPhoto()">Previous Photo</button>
+            <button type="button" onclick="nextPhoto()">Next Photo</button>
+            <button type="button" onclick="firstPhoto()">First Photo</button>
+            <button type="button" onclick="lastPhoto()">Last Photo</button>
+        </fieldset>
+        
+        <fieldset>
+            <legend><b>SlideShows</b></legend>
+            <button type="button" onclick="slideShow()">SlideShow</button>
+            <button type="button" onclick="randomSlideShow()">RandomSlideShow</button>
+            <button type="button" onclick="stopSlideShow()">StopSlideShow</button>
+        </fieldset>
+
+        <input type="button" onclick="resetData()" value="Reset Form Values">
+    </div>
+</body>
+
+</html>

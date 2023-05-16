@@ -1,0 +1,67 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    background-color: white;
+}
+
+header {
+    font-size: 3rem;
+    text-decoration: underline;
+    text-shadow: silver .125em .125em .125em;
+}
+.phone {
+    width: 40px;
+}
+
+#inchesMargin {
+    margin-right: 15px;
+}
+
+#age {
+    margin-right: 25px;
+}
+
+.legendTop {
+    color: #A0522D;
+    font-style: italic;
+}
+
+#studyType {
+    margin-right: 10px;
+}
+
+#idFirst {
+    width: 35px;
+}
+#idSecond {
+    width: 35px;
+}
+#commentArea {
+    height: 120px;
+    width: 550px;
+}
+
+legend {
+    color: #A0522D;
+}
+
+fieldset {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    margin: 0;
+  }
+
+footer {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+    text-align: center;
+}

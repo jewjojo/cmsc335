@@ -1,0 +1,28 @@
+{
+	"itemsListName": "mainlyFruits",
+	"itemsList": [{
+			"name": "Bananas",
+			"cost": 4.00
+		},
+		{
+			"name": "Orange Juice",
+			"cost": 5.00
+		},
+		{
+			"name": "Peanuts",
+			"cost": 1.00
+		},
+		{
+			"name": "Apples",
+			"cost": 0.75
+		},
+		{
+			"name": "Blueberries",
+			"cost": 1.50
+		},
+		{
+			"name": "Avocado",
+			"cost": 2.50
+		}
+	]
+}

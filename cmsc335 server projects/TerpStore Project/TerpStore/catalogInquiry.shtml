@@ -1,0 +1,62 @@
+<!-- You implement -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Catalog Inquiry</title>
+</head>
+
+<body>
+    <div class="outerBox">
+        <header>Catalog Inquiry</header>
+        <form action="http://npp.cs.umd.edu/cmsc335/projects/TerpStore/catalogInquiry.php" method="get">
+            <label>
+                <u>Item Category</u><input list="buyOptions" name="item-choice" class="dataInput" autofocus required>
+                <datalist id="buyOptions">
+                    <option value="clothes">
+                    <option value="books">
+                    <option value="music">
+                    <option value="food">
+                    <option value="other">
+                </datalist>
+            </label>
+            <br><br>
+            <label>
+                <u>Maximum Cost ($)</u> <input type="number" class="dataInput" name="maximumCost" min="1" max="1000"
+                    value="1" step="5">
+            </label>
+            <br><br>
+            <label>
+                <input type="checkbox" name="availableOnCampus"> <u>Available on Campus</u>
+            </label>
+            <br><br>
+            <label>
+                <input type="checkbox" name="availableOnline" checked> <u>Available Online</u>
+            </label>
+            <br>
+            <label>
+                <u>Additional Information</u>
+                <br>
+                <textarea name="info"></textarea>
+            </label>
+            <br><br>
+            <label>
+                <u>Contact Email Address:</u>
+                <input type="email" id="emailInput" class="dataInput" name="email" placeholder="example@terpmail.umd.edu">
+            </label>
+            <br><br>
+            <input type="submit" class="formButton" value="Submit Inquiry">
+            <input type="reset" class="formButton" value="Clear">
+            <br><br>
+
+        </form>
+        <div id="footerBox">
+            <!--#include virtual="footer.shtml" -->
+        </div>
+    </div>
+</body>
+
+</html>

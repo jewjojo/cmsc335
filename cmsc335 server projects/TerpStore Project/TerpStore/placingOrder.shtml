@@ -1,0 +1,57 @@
+<!-- You implement -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Placing Order</title>
+</head>
+
+<body>
+    <div class="outerBox">
+        <header>Placing Order</header>
+        <form action="processing/placingOrder.php" method="post">
+            <label>
+                <u>Item Serial #</u> <input type="text" name="serialNumber" placeholder="umd-item-0000" id="serialInput"
+                    class="dataInput" autofocus required>
+                <datalist id="buyOptions">
+                    <option value="clothes">
+                    <option value="books">
+                    <option value="music">
+                    <option value="food">
+                    <option value="other">
+                </datalist>
+            </label>
+            <br><br>
+
+            <u>Credit Card #</u>
+            <input type="text" class="cc" name="cc1" maxlength="4" required> -
+            <input type="text" class="cc" name="cc2" maxlength="4" required> -
+            <input type="text" class="cc" name="cc3" maxlength="4" required> -
+            <input type="text" class="cc" name="cc4" maxlength="4" required>
+
+            <br><br>
+            <label>
+                <u>Shipping Address</u> <input type="text" class="dataInput" name="shipping" maxlength="80" required>
+            </label>
+            <br><br>
+            <label>
+                <u>Contact Email Address:</u>
+                <input type="email" id="emailInput" class="dataInput" name="email"
+                    placeholder="example@terpmail.umd.edu">
+            </label>
+            <br><br>
+            <input type="submit" class="formButton" value="Submit Order">
+            <input type="reset" class="formButton" value="Clear">
+            <br><br>
+
+        </form>
+        <div id="footerBox">
+            <!--#include virtual="footer.shtml" -->
+        </div>
+    </div>
+</body>
+
+</html>

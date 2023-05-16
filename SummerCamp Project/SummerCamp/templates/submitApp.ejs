@@ -1,0 +1,34 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Application Confirmation</title>
+</head>
+
+<body>
+	<h1>Applicants Data</h1>
+	<div>
+		<b>Name: </b><%- name %>
+		<br>
+		<b>Email Address: </b><%- email %>
+		<br>
+		<b>GPA: </b><%- gpa %>
+		<br>
+		<b>Background Information: </b>
+		<br>
+		<%- backInfo %>
+	</div>
+	
+	<hr>
+	<p id="time"></p>
+	<script>
+	let time = Date();
+	let content = `<b>Task completed at ${time}</b>`
+	document.getElementById('time').innerHTML = content</script>
+	<hr>
+	<a href="/">HOME</a>
+</body>
+
+</html>
