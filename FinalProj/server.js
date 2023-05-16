@@ -216,6 +216,7 @@ async function updateUserInformation(request, response) {
     );
     if (applicant == undefined || applicant.length < 1) {
       response.render("noFindUser");
+      return;
     }
   } catch (err) {
     console.log(err);
@@ -250,7 +251,7 @@ async function updateUserInformation(request, response) {
   } finally {
     await client.close();
   }
-  response.render("index");
+  response.redirect("/");
   return;
 }
 
@@ -274,13 +275,11 @@ app.post("/signIn", (request, response) => {
         request.body.password
       );
       if (applicant !== undefined && applicant.length > 0) {
-        response.render("index");
+        response.redirect("/");
         signedIn = true;
-        return;
       } else {
         response.render("noFindUser");
         signedIn = false;
-        return;
       }
     } catch (err) {
       console.log(err);
@@ -306,6 +305,7 @@ app.get("/newsFeed", (request, response) => {
       news: await loadNews(),
     };
     response.render("newsFeed", variables);
+    return;
   }
   // run code
   if (signedIn) {
