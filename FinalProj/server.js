@@ -350,8 +350,7 @@ app.post("/adminRemove", (request, response) => {
   removeDatabase(request, response);
 });
 
-// comment out localhost requrements
-/*
+
 app.listen(portNumber);
 
 // Print expected information to terminal
@@ -379,4 +378,3 @@ process.stdin.on("readable", () => {
     process.stdin.resume();
   }
 });
-*/
